@@ -1,0 +1,28 @@
+{
+  "blocks": [
+    {
+      "id": 1,
+      "resource": "blocks/Block1",
+      "health": 1,
+      "destroyable": true
+    },
+    {
+      "id": 2,
+      "resource": "blocks/Block2",
+      "health": 2,
+      "destroyable": true
+    },
+    {
+      "id": 3,
+      "resource": "blocks/Block3",
+      "health": 3,
+      "destroyable": true
+    },
+    {
+      "id": 4,
+      "resource": "blocks/Block4",
+      "health": 99999,
+      "destroyable": false
+    }
+  ]
+}
