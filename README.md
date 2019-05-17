@@ -9,3 +9,11 @@ Block Breaker with level editor and saved levels into JSON files. Game created i
 
 Gameplay Video direct link: 
 https://www.youtube.com/watch?v=-JvlkST7wvk
+
+# Game Links
+
+Kongregate:
+https://www.kongregate.com/games/korseus/abstract-breaker
+
+Itch.io:
+https://korseus.itch.io/abstract-breaker
