@@ -50,7 +50,7 @@ public class LevelsManager : MonoBehaviour
     public void LoadLevel(int levelId)
     {
         currentLevelId = levelId;
-        StartCoroutine(LoadYourAsyncScene(levels[levelId]));
+        StartCoroutine(LoadLevelAsync(levels[levelId]));
     }
 
     public void FinishLevel()
@@ -63,7 +63,7 @@ public class LevelsManager : MonoBehaviour
         PlayerPrefs.SetInt("unlocked_level", UnlockedLevel);
     }
 
-    IEnumerator LoadYourAsyncScene(LevelData data)
+    private IEnumerator LoadLevelAsync(LevelData data)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(data.sceneName);
         
