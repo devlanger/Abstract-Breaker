@@ -16,6 +16,9 @@ public class FinishPanel : MonoBehaviour
     private Text timeText;
 
     [SerializeField]
+    private Text maxComboText;
+
+    [SerializeField]
     private string winText;
 
     [SerializeField]
@@ -32,5 +35,6 @@ public class FinishPanel : MonoBehaviour
         levelNameText.text = LevelsManager.Instance.CurrentLevel.name;
         string time = GameManager.Instance.GetElapsedTimeString();
         timeText.text = string.Format("Time: {0}", time);
+        maxComboText.text = string.Format("Max Combo: {0}", ComboManager.Instance.MaxCombo);
     }
 }

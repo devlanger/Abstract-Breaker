@@ -3198,5 +3198,22 @@ PrefabInstance:
       propertyPath: paddle
       value: 
       objectReference: {fileID: 222475779}
+    - target: {fileID: 7701717705858232794, guid: 8851908f2a64a1d4f9c203515a62a3dc,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1695180722606758023}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8851908f2a64a1d4f9c203515a62a3dc, type: 3}
+--- !u!114 &1695180722606758023 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1695180722606758023, guid: 8851908f2a64a1d4f9c203515a62a3dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1695180721762242770}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b14c6ba4afb9314b9f598d6f6d7f3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

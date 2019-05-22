@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 2
+  destroyParticlePrefab: {fileID: 4124385191167158639, guid: da135060b33e80f428fd26d73115baca,
+    type: 3}
 --- !u!61 &6884577138465425397
 BoxCollider2D:
   m_ObjectHideFlags: 0

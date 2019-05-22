@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public event Action OnDestroyedBlocks = delegate { };
     public event Action OnLostGame = delegate { };
     public event Action OnGameStarted = delegate { };
+    public event Action<Block> OnBlockHit = delegate { };
 
     public bool GameStarted { get; private set; }
     public bool GameFinished { get; private set; }
@@ -55,6 +56,12 @@ public class GameManager : MonoBehaviour
         SpawnLevel(LevelsManager.Instance.CurrentLevel);
 
         OnDestroyedBlocks += GameManager_OnDestroyedBlocks;
+        ball.OnBlockHit += Ball_OnBlockHit;
+    }
+
+    private void Ball_OnBlockHit(Block block)
+    {
+        OnBlockHit(block);
     }
 
     private void Update()

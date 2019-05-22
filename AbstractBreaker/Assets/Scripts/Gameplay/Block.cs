@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,16 +10,25 @@ public class Block : MonoBehaviour
     public int Health { get; set; }
     public bool Destroyable { get; set; }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    [SerializeField]
+    private GameObject destroyParticlePrefab;
+
+    public void Hit()
     {
-        Ball ball = collision.gameObject.GetComponent<Ball>();
-        if(ball != null)
+        if (Destroyable)
         {
             Health--;
-            if(Health <= 0)
+            transform.DOPunchScale(Vector3.one * 0.2f, 0.2f);
+
+            if (Health <= 0)
             {
                 GameManager.Instance.RemoveBlock(this);
                 Destroy(gameObject);
+                if (destroyParticlePrefab != null)
+                {
+                    GameObject inst = Instantiate(destroyParticlePrefab, transform.position, Quaternion.identity);
+                    Destroy(inst, 1);
+                }
             }
         }
     }

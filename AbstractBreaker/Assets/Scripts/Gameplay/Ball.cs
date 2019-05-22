@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +15,8 @@ public class Ball : MonoBehaviour
     private TrailRenderer trailRenderer;
 
     public bool IsStopped { get; private set; }
+
+    public event Action<Block> OnBlockHit = delegate { };
 
     private void Awake()
     {
@@ -61,5 +65,15 @@ public class Ball : MonoBehaviour
     public void DisableTrail()
     {
         trailRenderer.enabled = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Block block = collision.gameObject.GetComponent<Block>();
+        if(block != null && block.Destroyable)
+        {
+            block.Hit();
+            OnBlockHit(block);
+        }
     }
 }
