@@ -26,6 +26,30 @@ public class Ball : MonoBehaviour
     private void FixedUpdate()
     {
         ClampVelocity();
+        PreventLinearStuck();
+    }
+
+    private void PreventLinearStuck()
+    {
+        float dotRight = Vector2.Dot(rb.velocity.normalized, Vector2.right);
+        float dotUp = Vector2.Dot(rb.velocity.normalized, Vector2.up);
+        if (dotUp > 0.99f/* || dotUp < -0.99f || dotRight > 0.99f || dotRight < -0.99f*/)
+        {
+            rb.velocity = (Quaternion.Euler(0, 0, 1) * rb.velocity).normalized * ballSpeed;
+        }
+        else if(dotUp < -0.99f)
+        {
+            rb.velocity = (Quaternion.Euler(0, 0, -1) * rb.velocity).normalized * ballSpeed;
+        }
+        
+        if(dotRight > 0.99f)
+        {
+            rb.velocity = (Quaternion.Euler(0, 0, 1) * rb.velocity).normalized * ballSpeed;
+        }
+        else if(dotRight < -0.99f)
+        {
+            rb.velocity = (Quaternion.Euler(0, 0, -1) * rb.velocity).normalized * ballSpeed;
+        }
     }
 
     private void ClampVelocity()

@@ -10,8 +10,10 @@ public class LevelsManager : MonoBehaviour
     public Dictionary<int, LevelData> levels = new Dictionary<int, LevelData>();
 
     public event Action<LevelData> OnLevelLoaded = delegate { };
-
+    
+    public bool UnlockedLevels = false;
     public int currentLevelId = 1;
+
     public LevelData CurrentLevel
     {
         get

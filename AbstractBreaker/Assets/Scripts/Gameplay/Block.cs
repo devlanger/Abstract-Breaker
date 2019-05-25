@@ -18,6 +18,7 @@ public class Block : MonoBehaviour
         if (Destroyable)
         {
             Health--;
+            transform.localScale = Vector3.one;
             transform.DOPunchScale(Vector3.one * 0.2f, 0.2f);
 
             if (Health <= 0)

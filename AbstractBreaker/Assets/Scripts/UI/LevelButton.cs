@@ -36,7 +36,7 @@ public class LevelButton : MonoBehaviour
         this.LevelId = level.id;
         levelNameText.text = level.name;
 
-        if (level.id > LevelsManager.Instance.UnlockedLevel + 1)
+        if (!LevelsManager.Instance.UnlockedLevels && level.id > LevelsManager.Instance.UnlockedLevel + 1)
         {
             bt.enabled = false;
             blockedIndicator.SetActive(true);
